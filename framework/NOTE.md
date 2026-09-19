@@ -1,0 +1,49 @@
+┌─────────────────┐
+│   Test Cases    │
+└───────┬─────────┘
+        │
+        ▼
+┌─────────────────┐
+│      DDT        │
+│  Test Data      │
+└───────┬─────────┘
+        │
+        ▼
+┌─────────────────┐
+│ Keyword Engine  │
+│      KDT        │
+└───────┬─────────┘
+        │
+        ▼
+┌─────────────────┐
+│     Modules     │
+│    Modular      │
+└───────┬─────────┘
+        │
+        ▼
+┌─────────────────┐
+│      POM        │
+│     Pages       │
+└───────┬─────────┘
+        │
+        ▼
+┌─────────────────┐
+│ Selenium Driver │
+└───────┬─────────┘
+        │
+        ▼
+┌─────────────────┐
+│  Web Application│
+└─────────────────┘
+
+
+16/9/26
+1. Create base framework to test with a simple flow:
+    -> initially, fixture opens Chrome and gets url and other data from config.config for browsering
+    -> then, in yield, tests.test_*.py will be implemented by pytest
+    -> tests gets URL from config, and test funtions run while expected datas can be asserted
+    -> finally, results will be shown in terminal and conftest.py quit the test session
+
+2. Create a base_page which is made up from common methods (load, find_element, click, enter_text, get_text, get title, get_url)
+    => This will be inherited by other pages
+    => repeatable and maintainable
