@@ -1,6 +1,6 @@
 BASE_URL = "https://www.saucedemo.com/"
 
-BROWSER = "chrome"
+BROWSER = "Edge"
 
-IMPLICIT_WAIT = 0
+IMPLICIT_WAIT = 5
 EXPLICIT_WAIT = 10

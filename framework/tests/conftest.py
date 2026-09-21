@@ -2,6 +2,7 @@ import pytest
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.edge.options import Options
 
 from config.config import BASE_URL, BROWSER, IMPLICIT_WAIT, EXPLICIT_WAIT
 
@@ -11,7 +12,7 @@ def driver():
     options = Options()
     options.add_argument("--start-maximized")
 
-    driver = webdriver.Chrome(options=options)
+    driver = webdriver.Edge(options=options)
 
     driver.get(BASE_URL)
 
