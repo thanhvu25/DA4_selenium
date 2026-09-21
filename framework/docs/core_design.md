@@ -197,7 +197,9 @@ Keyword Executor
 
 ### Luồng xử lý chính:
 
-Test Case
+Excel
+    ↓
+Excel Reader
     ↓
 Test Executor
     ↓
@@ -221,4 +223,47 @@ Test Executor              Keyword Executor
       ↓                          ↓
       └──────── Execution ───────┘
 
-  
+## 8. Giới hạn
+
+Thành phần                  Chịu trách nhiệm                Không chịu trách nhiệm
+___________________________________________________________________________________
+Driver Manager              Quản lý WebDriver               Xử lý Testcase
+Test Executor               Điều phối testcase              Thực hiện locator
+Keyword Executor            Điều phối keyword               Chứa locator
+Test Context                Lưu trạng thái test             Thực hiện thao tác UI
+Keyword Library             Cung cấp các keyword            Quản lý test flow
+POM                         Quản lý page/locator            Đọc excel
+Excel Reader                Đọc test data                   Điều khiển browser
+
+## 9. Nguyên tắc thiết kế
+
+- Mỗi module chỉ chịu trách nhiệm cho 1 nhóm chức năng
+- Keyword không chứa locator
+- Core modules phải có khả năng sử dụng lại cho nhiều web application
+- Các modulel giao tiếp thông qua interface rõ ràng
+
+## 10. Core Module Dependency
+
+test_executor.py
+    ↓
+keyword_executor.py
+    ↓
+keyword_registry.py
+    ↓
+keywords/
+    ↓
+pages/
+    ↓
+driver_manager.py
+    ↓
+Selenium
+
+## 11. Kết quả thiết kế
+
+Framework có các module lõi:
+
+core/
+├── driver_manager.py
+├── test_executor.py
+├── keyword_executor.py
+└── test_context.py
