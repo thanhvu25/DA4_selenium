@@ -203,7 +203,7 @@ LOCATORS = {
   cần đọc hiểu ý nghĩa, không cần biết chi tiết implement.
 - Method business-level luôn trả về `None` hoặc dữ liệu cần assert
   (không trả về `WebElement` ra ngoài Page Object).
-- Mỗi Page kế thừa `BasePage`, không kế thừa lẫn nhau giữa các Page.
+- Mỗi Page kế thừa `BasePage`, không kế thừa lẫn nhau giữa các Page. 
 
 ### 4.4 Ví dụ: LoginPage
 
