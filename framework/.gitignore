@@ -2,3 +2,6 @@
 __pycache__/
 .pytest_cache/
 *.pyc
+# Excel temporary/lock files
+~$*.xlsx
+$*.xlsx
